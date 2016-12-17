@@ -1,0 +1,18 @@
+<resources>
+  <Resource id="jdbc/product" type="javax.sql.DataSource">
+    JdbcDriver  com.mysql.jdbc.Driver
+    JdbcUrl jdbc:mysql://localhost:8889/product
+    UserName    root
+    Password    root
+    JtaManaged = true
+  </Resource>
+
+
+  <Resource id="jdbc/product-unmanaged" type="javax.sql.DataSource">
+    JdbcDriver  com.mysql.jdbc.Driver
+    JdbcUrl jdbc:mysql://localhost:8889/product
+    UserName    root
+    Password    root
+    JtaManaged = false
+  </Resource>
+</resources>

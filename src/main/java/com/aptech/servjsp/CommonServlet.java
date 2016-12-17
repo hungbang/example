@@ -2,16 +2,15 @@ package com.aptech.servjsp;
 
 import java.io.IOException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.aptech.core.dao.ProductDao;
 
 /**
  * Servlet implementation class CommonServlet
@@ -28,12 +27,15 @@ public class CommonServlet extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("example");
+//	EntityManagerFactory factory = Persistence.createEntityManagerFactory("example");
+//
+//	EntityManager em = factory.createEntityManager();
+//
+//	EntityTransaction transaction = em.getTransaction();
 
-	EntityManager em = factory.createEntityManager();
-
-	EntityTransaction transaction = em.getTransaction();
-
+	@EJB
+	private ProductDao productDao;
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -43,7 +45,7 @@ public class CommonServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String param = getServletConfig().getInitParameter("abc");
 		System.out.println("====param===" + param);
-		Product prod = em.find(Product.class, "1");
+		Product prod = productDao.getProduct(1);
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		System.out.println("=====print product to user: "+ prod.getProductName());

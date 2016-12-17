@@ -36,7 +36,7 @@ public class HelloServlet extends HttpServlet {
 		System.out.println("======param 2  end :");
 		PrintWriter writer = response.getWriter();
 		//thuộc request => dùng đường dẫn tương đối (relative path )
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pages/book-list.jsp");
 		//thuộc servlet context => sử dụng đường dẫn tuyệt đối.
 		//getServletContext().getRequestDispatcher(arg0)
 		

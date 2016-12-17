@@ -1,10 +1,15 @@
 com/aptech/servjsp/AdminServlet.class
 com/aptech/servjsp/LoginServlet.class
 com/aptech/servjsp/LogoutServlet.class
-com/aptech/servjsp/HelloServlet.class
-com/aptech/servjsp/DataServer.class
+com/aptech/servjsp/PagingServlet.class
 com/aptech/servjsp/LoginFilter.class
 com/aptech/servjsp/UploadServlet.class
 com/aptech/servjsp/CommonServlet.class
+com/aptech/core/dao/DAO.class
+com/aptech/core/dao/impl/ProductDaoImpl.class
+com/aptech/servjsp/HelloServlet.class
+com/aptech/servjsp/DataServer.class
+com/aptech/servjsp/vo/PagingVO.class
+com/aptech/core/dao/ProductDao.class
 com/aptech/servjsp/Product.class
 com/aptech/servjsp/UserServlet.class
